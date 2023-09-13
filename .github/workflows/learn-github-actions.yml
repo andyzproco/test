@@ -11,6 +11,8 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: npm install -g pytest
+      - run: pytest --version
   test-python:
     runs-on: ubuntu-latest
     steps:
@@ -21,9 +23,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-      - name: Install pytest
-      - run: npm install -g pytest
-      - run: pytest --version
+        
       - name: Run pytest
         run: |
           pytest test_main.py
