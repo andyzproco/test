@@ -12,7 +12,7 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       - run: npm install -g pytest
-      - run: pytest --version
+      - run: pytest -v
   test-python:
     runs-on: ubuntu-latest
     steps:
